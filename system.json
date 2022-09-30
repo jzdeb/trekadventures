@@ -1,0 +1,29 @@
+{
+  "id": "trekadventures",
+  "title": "TrekAdventures",
+  "description": "A game system for Star Trek Adventures.",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10",
+    "maximum": "10"
+  },
+  "authors": [
+    {
+      "name": "Stahl",
+      "url": "#",
+	  "email": "#",
+	  "discord": "#"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/jzdeb/trekadventures",
+  "manifest": "https://raw.githubusercontent.com/jzdeb/trekadventures/master/src/system.json",
+  "download": "https://raw.githubusercontent.com/jzdeb/trekadventures/v0.0.1/package/trekadventures-v0.0.1.zip"
+}
