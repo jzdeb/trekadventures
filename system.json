@@ -25,5 +25,5 @@
   ],
   "url": "https://github.com/jzdeb/trekadventures",
   "manifest": "https://raw.githubusercontent.com/jzdeb/trekadventures/master/src/system.json",
-  "download": "https://raw.githubusercontent.com/jzdeb/trekadventures/v0.0.1/package/trekadventures-v0.0.1.zip"
+  "download": "https://github.com/jzdeb/trekadventures/releases/download/v0.0.1/trekadventures-v0.0.1.zip"
 }
