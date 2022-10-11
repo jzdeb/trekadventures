@@ -1,0 +1,123 @@
+/* LCARS fonts from https://www.thelcars.com/fonts.php */
+@font-face {
+    font-family: 'Antonio';
+    font-style: 'normal';
+    font-weight: 400;
+    src: url('../fonts/Antonio-Regular.ttf');
+}
+@font-face {
+    font-family: 'Antonio';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Antonio-Bold.ttf');
+  }
+:root {
+  /* LCARS colors from https://www.thelcars.com/colors.php */
+  --lcars01: #f5f6fa; /*space-white*/
+  --lcars02: #ddbbff; /*violate-creme*/
+  --lcars03: #33cc99; /*green*/
+  --lcars04: #cc4499; /*magenta*/
+  --lcars05: #4455ff; /*blue*/
+  --lcars06: #ffcc33; /*yellow*/
+  --lcars07: #9944ff; /*violet*/
+  --lcars08: #ff7700; /*orange*/
+  --lcars09: #cc88ff; /*african-violet*/
+  --lcars10: #cc77ff; /*text*/
+  --lcars11: #dd4444; /*red*/
+  --lcars12: #ffaa90; /*almond*/
+  --lcars13: #ffbbaa; /*almond-creme*/
+  --lcars14: #ffcc66; /*sunflower*/
+  --lcars15: #7788ff; /*bluey*/
+  --lcars16: #666688; /*gray*/
+  --lcars17: #aaaaff; /*sky*/
+  --lcars18: #88ccff; /*ice*/
+  --lcars19: #ffaa00; /*gold*/
+  --lcars20: #ff2200; /*mars*/
+  --lcars21: #ff8866; /*peach*/
+  --lcars22: #ff9966; /*butterscotch*/
+  --lcars23: #ff5555; /*tomato*/
+  --lcars24: #cc33ff; /*lilac*/
+}
+  .system-trekadventures #sidebar {
+    background-color: #000;
+    background-image: none;
+  }
+  .system-trekadventures p.nue {
+    font-family: 'Antonio';
+    font-weight: 400;
+    color: var(--lcars10);
+  }
+  .system-trekadventures h4.message-sender, .system-trekadventures span.whisper-to {
+    font-family: 'Antonio';
+    font-weight: 400;
+    color: var(--lcars18);
+    text-transform: uppercase;
+  }
+  .system-trekadventures footer.nue {
+    font-family: 'Antonio';
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--lcars03);
+    border:0;
+  }
+  .system-trekadventures time.message-timestamp {
+    font-family: 'Antonio';
+    font-weight: 400;
+    color: var(--lcars01);
+    text-transform: uppercase;
+  }
+  .system-trekadventures .message-delete {
+    color: var(--lcars11);
+  }
+  .system-trekadventures p.nue {
+    font-family: 'Antonio';
+    font-weight: 400;
+    color: var(--lcars10);
+  }
+  .system-trekadventures .chat-message {
+    background: #000;
+  }
+  .system-trekadventures h3.nue {
+    font-family: 'Antonio';
+    font-weight: 700;
+    color: var(--lcars19);
+    text-transform: uppercase;
+    border: 0;
+  }
+ .system-trekadventures p.nue a {
+  color:var(--lcars08);
+  text-decoration: underline;
+  text-transform: uppercase;
+ }
+ .system-trekadventures p.nue a:hover {
+  text-shadow: none;
+ }
+ .system-trekadventures .dice-result {
+  font-family: 'Antonio';
+  font-weight: 400;
+  color: var(--lcars10);
+ }
+ .system-trekadventures nav#sidebar-tabs {
+  border-bottom:#000;
+  box-shadow: none;
+ }
+ .system-trekadventures #sidebar-tabs > .item.active {
+  border:#000;
+  box-shadow: none;
+  color: var(--lcars19);
+ }
+ .system-trekadventures #sidebar-tabs > .item {
+  border:#000;
+  box-shadow: none;
+  color: var(--lcars01);
+ }
+ .system-trekadventures .tabs .item {
+  text-shadow: none;
+ }
+ .system-trekadventures #sidebar.collapsed #sidebar-tabs > .item.active {
+  border-bottom: none;
+ }
+ ::-webkit-scrollbar-thumb {
+  background:var(--lcars09);
+  border: 1px solid var(--lcars09);
+ }

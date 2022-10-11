@@ -12,9 +12,12 @@
     {
       "name": "Stahl",
       "url": "#",
-	  "email": "#",
-	  "discord": "#"
+	    "email": "#",
+	    "discord": "#"
     }
+  ],
+  "styles": [
+    "styles/trekadventures.css"
   ],
   "url": "https://github.com/jzdeb/trekadventures",
   "manifest": "https://raw.githubusercontent.com/jzdeb/trekadventures/master/src/system.json",
