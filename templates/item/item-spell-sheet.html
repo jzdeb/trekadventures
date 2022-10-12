@@ -1,0 +1,106 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs" data-group="primary">
+        <img src="systems/trekadventures/assets/main-menu-slope.webp">
+        <div class="buttons">
+            <a class="item" data-tab="attributes">{{localize "trekadventures.TEMPLATES.Attributes"}}</a>
+            <a class="item" data-tab="description">{{localize "trekadventures.TEMPLATES.Description"}}</a>
+        </div>
+    </nav>
+
+    {{> "systems/trekadventures/templates/item/parts/item-header.html"}}
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab description" data-group="primary" data-tab="description">
+            {{editor descriptionHTML target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+
+            
+            <div class="resource green-field flexrow">
+                <span>
+                    <label style="margin-right: 5px;">{{localize "trekadventures.TEMPLATES.Skill"}}</label>
+                    <select name="system.skill">
+                        {{#select system.skill}}
+                        {{#each trekadventures.SKILLS as |skill key|}}
+                        <option value="{{skill.key}}">{{localize (concat 'trekadventures.SKILL.' skill.label)}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </span>
+                <span>
+                    <label style="margin-right: 5px;">{{localize "trekadventures.TEMPLATES.Focus"}}</label>
+                    <select name="system.focus">
+                        {{#select system.focus}}
+                        <option value="">{{localize foc}}</option>
+                        {{#each (getSkillFocusList system.skill) as |foc key|}}
+                        <option value="{{foc}}">{{localize foc}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </span>
+
+            </div>
+            <div class="resource flexrow green-field">
+                <span class="flex-group-left">
+                    <label>{{localize "trekadventures.TEMPLATES.Difficulty"}}</label>
+                    <input type="number" class="num-short-2" name="system.difficulty" value="{{system.difficulty}}">
+                </span>
+                <span class="flex flex-group-left" style="gap:5px">
+                    <label>{{localize "trekadventures.TEMPLATES.Duration"}}</label>
+                    <input type="text" name="system.duration" value="{{system.duration}}">
+                </span>
+            </div>
+            <div class="resource flexrow green-field">
+                <span class="flex flex-group-left" style="gap:5px">
+                    <label>{{localize "trekadventures.TEMPLATES.Cost"}}</label>
+                    <input type="number" class="num-short-2" name="system.cost" value="{{system.cost}}">
+                </span>
+                <span class="flex flex-group-left" style="gap:5px">
+                    <label>{{localize "trekadventures.TEMPLATES.CostEffects"}}</label>
+                    <input type="text" name="system.costEffects" value="{{system.costEffects}}">
+                </span>
+            </div>
+
+            <hr>
+
+            <div class="section-title" style="margin-bottom: 0.313rem;">
+                <h3>{{localize "trekadventures.TEMPLATES.Ritual"}}</h3>
+                <span class="right-slope olive"></span>
+            </div>
+
+            <div class="resource flexrow green-field">
+                <label>{{localize "trekadventures.TEMPLATES.ritual_stress"}}</label>
+                <span class="flex flex-group-left" style="gap:5px">
+                    <input type="number" class="num-short-2" name="system.ritualStress.value" value="{{system.ritualStress.value}}">
+                    <label>/</label>
+                    <input type="number" class="num-short-2" name="system.ritualStress.max" value="{{system.ritualStress.max}}">
+                </span>
+            </div>
+            <div class="resource flexrow green-field">
+                <label>{{localize "trekadventures.TEMPLATES.ritual_steps"}}</label>
+                <span class="flex flex-group-left" style="gap:5px">
+                    <input type="number" class="num-short-2" name="system.ritualSteps.value" value="{{system.ritualSteps.value}}">
+                    <label>/</label>
+                    <input type="number" class="num-short-2" name="system.ritualSteps.max" value="{{system.ritualSteps.max}}">
+                </span>
+            </div>
+            <div class="resource flexrow green-field">
+                <label>{{localize "trekadventures.TEMPLATES.ritual_resistance"}}</label>
+                <input type="text" name="system.ritualResistance" value="{{system.ritualResistance}}">
+            </div>
+            <div class="resource flexrow green-field">
+                <span class="flex flex-group-left" style="gap:5px">
+                    <label>{{localize "trekadventures.TEMPLATES.ritual_requirements"}}</label>
+                    <input type="text" name="system.ritualRequirements" value="{{system.ritualRequirements}}">
+                </span>
+            </div>
+        </div>
+    </section>
+</form>

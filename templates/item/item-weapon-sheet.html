@@ -1,0 +1,132 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs" data-group="primary">
+    <img src="systems/trekadventures/assets/main-menu-slope.webp">
+    <div class="buttons">
+      <a class="item" data-tab="attributes">{{localize "trekadventures.TEMPLATES.Attributes"}}</a>
+      <a class="item" data-tab="description">{{localize "trekadventures.TEMPLATES.Description"}}</a>
+    </div>
+  </nav>
+
+  {{> "systems/trekadventures/templates/item/parts/item-header.html"}}
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
+      {{editor descriptionHTML target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+
+      <div class="resource-row flexrow bgEven resource">
+        <label class="resource-label" for="system.weaponType"><strong>{{localize "trekadventures.WEAPONS.type"}}</strong></label>
+        <select name="system.weaponType">
+          {{#select system.weaponType}}
+          {{#each trekadventures.WEAPONS.weaponTypes as |weaponType key| }}
+          <option value="{{weaponType.bonusAttribute}}">{{localize (concat 'trekadventures.WEAPONS.weaponTypes.' weaponType.label)}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="flexrow resource-row bgOdd resource">
+        <label class="resource-label"><strong>{{localize "trekadventures.TEMPLATES.Skill"}}</strong></label>
+        <select name="system.skill">
+          {{#select system.skill}}
+          {{#each trekadventures.SKILLS as |skill key|}}
+          <option value="{{skill.key}}">{{localize (concat 'trekadventures.SKILL.' skill.label)}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="flexrow resource-row bgOdd resource">
+        <label class="resource-label"><strong>{{localize "trekadventures.TEMPLATES.Focus"}}</strong></label>
+        <select name="system.focus">
+          {{#select system.focus}}
+          {{#each (getSkillFocusList system.skill) as |foc key|}}
+          <option value="{{foc}}">{{localize foc}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <!-- <div class="flexrow resource-row bgOdd resource">
+        <label class="resource-label"><strong>{{localize "trekadventures.TEMPLATES.Focus"}}</strong></label>
+        <select name="system.focus">
+          {{#select system.focus}}
+          {{#each trekadventures.WEAPONS.fightingFocuses as |foc key|}}
+          <option value="{{key}}">{{localize foc}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div> -->
+
+      <div class="resource-row flexrow bgEven resource">
+        <label class="resource-label" for="system.range"><strong>{{localize "trekadventures.TEMPLATES.RANGE"}}</strong></label>
+        <select name="system.range">
+          {{#select system.range}}
+          {{#each trekadventures.WEAPONS.range as |range key|}}
+          <option value="{{key}}">{{localize range }}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="resource-row flexrow bgOdd resource">
+        <label class="resource-label" for="system.stress"><strong>{{localize "trekadventures.STRESS.stress"}}</strong></label>
+        <input type="number" name="system.stress" value="{{system.stress}}">
+      </div>
+
+      <div class="resource-row flexrow bgEven resource">
+        <label class="resource-label" for="system.ammo"><strong>{{localize "trekadventures.TEMPLATES.Ammo"}}</strong></label>
+        <input type="number" name="system.ammo" value="{{system.ammo}}">
+      </div>
+
+      <div class="resource-row flexrow bgOdd resource">
+        <label class="resource-label" for="system.salvo"><strong>{{localize "trekadventures.TEMPLATES.Salvo"}}</strong></label>
+        <input type="text" name="system.salvo" value="{{system.salvo}}">
+      </div>
+
+      <div class="grid">
+        <div class="resource-row">
+          <div class="section-title">
+            <h3>{{localize "trekadventures.TEMPLATES.Weapon_Qualities"}}</h3>
+            <span class="right-slope olive"></span>
+          </div>
+          <div class="items-list" style="border: 1px solid #759549;">
+            {{#each system.qualities as |item key|}}
+            <div class="flexrow toggle-label {{#ifCond item.value '==' true}}active{{/ifCond}}">
+              <label data-tooltip="{{getTooltipFromConfigKey (concat 'trekadventures.WEAPONS.qualities.' key)}}" data-tooltip-direction="RIGHT">
+                <input type="checkbox" name="system.qualities.{{key}}.value" {{#ifCond item.value '==' true}}checked{{/ifCond}}>{{localize (concat 'trekadventures.WEAPONS.weaponQuality.' key)}}
+              </label>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="resource-row">
+          <div class="section-title">
+            <h3>{{localize "trekadventures.TEMPLATES.DAMAGE_EFFECTS"}}</h3>
+            <span class="right-slope olive"></span>
+          </div>
+          <div class="items-list" style="border: 1px solid #759549;">
+            {{#each system.effect as |item key|}}
+            <div class="flexrow toggle-label {{#ifCond item.value '==' true}}active{{/ifCond}}">
+              <label data-tooltip="{{getTooltipFromConfigKey (concat 'trekadventures.WEAPONS.effects.' key)}}" data-tooltip-direction="LEFT">
+                <input type="checkbox" name="system.effect.{{key}}.value" {{#ifCond item.value '==' true}}checked{{/ifCond}}>{{localize (concat 'trekadventures.WEAPONS.damageEffect.' key)}}
+              </label>
+              {{#if (ne item.rank undefined)}}
+              <input type="number" name="system.effect.{{key}}.rank" class="num-short-2" style="height: 1.1rem;" value="{{item.rank}}">
+              {{/if}}
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

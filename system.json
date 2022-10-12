@@ -1,25 +1,53 @@
 {
   "id": "trekadventures",
-  "title": "TrekAdventures",
-  "description": "A game system for Star Trek Adventures.",
-  "version": "0.0.1",
+  "title": "Trek Adventures",
+  "description": "Star Trek Adventures 2d20 System for FoundryVTT",
+  "version": "0.0.2",
   "compatibility": {
     "minimum": "10",
     "verified": "10",
     "maximum": "10"
   },
+  "templateVersion": 1,
   "authors": [
     {
-      "name": "Stahl",
-      "url": "#",
-	    "email": "#",
-	    "discord": "#"
+      "name": "Stahl"
     }
   ],
-  "styles": [
-    "styles/trekadventures.css"
+  "scripts": [],
+  "esmodules": [
+    "module/trekadventures.mjs"
   ],
+  "styles": [
+    "css/trekadventures.css"
+  ],
+  "packs": [
+    {
+      "name": "skills",
+      "label": "Skills",
+      "system": "trekadventures",
+      "path": "./packs/skills.db",
+      "type": "Item"
+    },
+    {
+      "name": "ac-2d20-macros",
+      "label": "AC 2d20 Macros",
+      "system": "trekadventures",
+      "path": "./packs/ac-2d20-macros.db",
+      "type": "Macro"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
+  "gridDistance": 1,
+  "gridUnits": "m",
   "url": "https://github.com/jzdeb/trekadventures",
-  "manifest": "https://raw.githubusercontent.com/jzdeb/trekadventures/master/src/system.json",
-  "download": "https://github.com/jzdeb/trekadventures/releases/download/v0.0.1/trekadventures-v0.0.1.zip"
+  "manifest": "https://github.com/jzdeb/trekadventures/releases/latest/download/system.json",
+  "download": "https://github.com/jzdeb/trekadventures/releases/download/v0.0.2/trekadventures.zip"
 }
