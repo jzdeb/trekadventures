@@ -4,10 +4,10 @@
         <div class="flexcol">
             <h4>{{localize "trekadventures.TEMPLATES.GM_MOMENTUM"}}</h4>
         </div>
-        <div class="flexrow align-mid">           
-            <a class="ap-btn {{#if (eq isGM true)}}ap-sub{{/if}}">-</a>            
+        <div class="flexrow align-right">           
+            <a class="ap-btn {{#if (eq isGM true)}}ap-sub{{/if}}"><i class="fas fa-minus"></i></a>            
             <input type="number" class="ap-input num-short-3" value={{gmMomentum}} {{#if (ne isGM true)}}disabled{{/if}}>
-            <a class="ap-btn  {{#if (eq isGM true)}}ap-add{{/if}}">+</a>
+            <a class="ap-btn  {{#if (eq isGM true)}}ap-add{{/if}}"><i class="fas fa-plus"></i></a>
         </div>
     </div>
     {{/if}}
@@ -17,26 +17,28 @@
         <div class="flexcol">
             <h4>{{localize "trekadventures.TEMPLATES.MAX_PARTY_MOMENTUM"}}</h4>
         </div>
-        <div class="flexrow align-mid">
-            <a class="ap-btn ap-sub">-</a>
+        <div class="flexrow align-right">
+            <a class="ap-btn ap-sub"><i class="fas fa-minus"></i></a>
             <input type="number" class="ap-input num-short-3" value="{{maxMomentum}}">
-            <a class="ap-btn ap-add">+</a>
+            <a class="ap-btn ap-add"><i class="fas fa-plus"></i></a>
         </div>
     </div>
     {{/if}}
 
     <div class="ap-resource party" data-type="partyMomentum">
-        {{#if (eq maxAppShowToPlayers true)}}
-        <a class='toggle-maxAp'><i class="fas fa-cog"></i></a>
-        {{/if}}
         <div class="flexcol">
             <h4>{{localize "trekadventures.TEMPLATES.PARTY_MOMENTUM"}}</h4>
         </div>
-        <div class="flexrow align-mid">
-            <a class="ap-btn ap-sub">-</a>
+        {{#if (eq maxAppShowToPlayers true)}}
+        <a class='toggle-maxAp'><i class="fas fa-gear"></i></a>
+        {{/if}}
+
+        <div class="flexrow align-right">
+            <a class="ap-btn ap-sub"><i class="fas fa-minus"></i></a>
             <input type="number" class="ap-input num-short-3" value="{{partyMomentum}}">
-            <a class="ap-btn ap-add">+</a>
+            <a class="ap-btn ap-add"><i class="fas fa-plus"></i></a>
         </div>
     </div>
+
 
 </div>

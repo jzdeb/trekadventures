@@ -15,6 +15,28 @@ input[type="number"] {
 		border: none;		
 	}
 }
+input[type="button"] {
+	font-size: 14px;
+	background-color: none;
+	color: $c-dark;
+	border:none;
+	min-width:20px;
+	min-height:20px;
+	margin: 4px 2px;
+	text-decoration: none;
+	font-family:'Antonio';
+}
+input[type="number"] {
+	background-color: none;
+	color: $c-black;
+	border:1px solid #000;
+	width:60px;
+	margin: 4px 2px;
+	min-width:60px;
+	font-family:'Antonio';
+	//border-radius:0;
+	height:auto;
+}
 
 .toggle-label {
 	input[type="checkbox"] {

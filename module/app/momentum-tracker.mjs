@@ -45,6 +45,7 @@ export class MomentumTracker extends Application {
 
         if (MomentumTracker.closed) {
             html.find('.ap-resource.maxMomentum-box').css("display", "none");
+
         }
 
         html.find('.ap-input').change(ev => {
