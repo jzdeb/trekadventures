@@ -324,10 +324,11 @@ a:hover {
   background-image: none;
 }
 
-p.nue {
+p.nue, .chat-message .table-draw .table-description, .message-content {
   font-family: "Antonio";
   font-weight: 400;
   color: #cc77ff;
+  border: none;
 }
 
 h4.message-sender, span.whisper-to {
@@ -366,11 +367,11 @@ p.nue {
   color: #cc77ff;
 }
 
-.chat-message.whisper {
+.chat-message.whisper, .chat-message {
   background: #000;
 }
 
-h3.nue {
+h3.nue, .flavor-text {
   font-family: "Antonio";
   font-weight: 700;
   color: #ffaa00;
@@ -389,10 +390,15 @@ p.nue a:hover {
   background: none;
 }
 
+.dice-roll .dice-formula, .dice-roll .dice-total {
+  border: none;
+  box-shadow: none;
+}
+
 .dice-result {
   font-family: "Antonio";
   font-weight: 400;
-  color: #cc77ff;
+  color: #33cc99;
 }
 
 nav#sidebar-tabs {
@@ -593,6 +599,13 @@ textarea:focus, select:focus {
 
 #chat-form textarea, #chat-controls .roll-type-select, .directory .directory-header .header-search input {
   background: #f5f6fa;
+}
+
+.result-text {
+  color: #dd4444;
+  font-family: "Antonio";
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .grid,

@@ -256,10 +256,11 @@ a{
 	background-image: none;  
   }
   
-  p.nue {
+  p.nue, .chat-message .table-draw .table-description, .message-content {
 	font-family: 'Antonio';
 	font-weight: 400;
 	color: $c-lcars10;
+	border:none;
   }
   
   h4.message-sender, span.whisper-to {
@@ -292,10 +293,10 @@ a{
 	font-weight: 400;
 	color: $c-lcars10;
   }
-  .chat-message.whisper {
+  .chat-message.whisper, .chat-message {
 	background: #000;
   }
-  h3.nue {
+  h3.nue, .flavor-text {
 	font-family: 'Antonio';
 	font-weight: 700;
 	color: $c-lcars19;
@@ -311,10 +312,14 @@ a{
   text-shadow: none;
   background:none;
   }
+  .dice-roll .dice-formula, .dice-roll .dice-total {
+	border:none;
+	box-shadow:none;
+  }
   .dice-result {
   font-family: 'Antonio';
   font-weight: 400;
-  color: $c-lcars10;
+  color: $c-lcars03;
   }
   nav#sidebar-tabs {
   border-bottom:#000;
@@ -524,4 +529,10 @@ textarea:focus, select:focus {
 }
 #chat-form textarea, #chat-controls .roll-type-select, .directory .directory-header .header-search input {
 	background:$c-lcars01;
+}
+.result-text {
+	color:$c-lcars11;
+	font-family: 'Antonio';
+	font-weight: 700;
+	text-transform: uppercase;
 }
