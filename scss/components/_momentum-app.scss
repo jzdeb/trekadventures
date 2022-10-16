@@ -2,24 +2,24 @@
 	position: absolute;
 	display: block;
 	margin: 5px;
-	bottom: 40px !important;
-	right: 320px !important;
+	top: 120px !important;
+	right: 400px !important;
     max-width: 240px;
-	z-index: 1000;
+	z-index: 50;
 
 	.ap-resource {
 		position:relative;
 		display: block;
-		margin: 0 8px 16px 8px;
-		width: 220px;
-		height: 60px;
-		padding: 2px 24px;
+		//margin: 0 8px 16px 8px;
+		width: 170px;
+		height: 80px;
+		padding: 10px 24px;
 		background-color: $c-lcars09;
-		border-radius: 26px;
+		//border-radius: 26px;
 		text-align: right;
 		line-height: normal;
 		text-decoration: none;
-		font-size: 17px;
+		font-size: 15px;
 		font-weight: bold;
 		text-transform: uppercase;
 		color: $c-black;
@@ -27,27 +27,26 @@
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		padding-top:2px;
 		font-family: 'Antonio';
+		border-bottom:5px solid #000;
 
 		&.gm {
-            background-color: $c-lcars20;			
+            background-color: $c-lcars11;			
 		}
 		&.party {
-            background-color: $c-lcars15;
+            background-color: $c-lcars05;
 		}
 		&.maxMomentum-box {
-            background-color: $c-lcars09;
+            background-color: $c-lcars08;
 		}
 
 		.toggle-maxAp {
 			position: absolute;
-			top: 2px;
+			top: 9px;
 			left: 24px;
 			color: $c-black;
 		}
 
-		margin-bottom: 10px;
 		&:last-child {
 			margin-bottom: 0;
 		}

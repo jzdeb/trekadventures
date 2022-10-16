@@ -6,10 +6,10 @@
 }
 
 button{
-  font-family: $font-germania;
+  font-family: $font-primary;
   font-size: 16px;
-  color: $c-green-olive;
-  background-color: $c-beige;
+  color: $c-black;
+  //background-color: $c-black;
   &:hover {
     //text-shadow: 0 0 10px $c-green-light;
     box-shadow: 0 0 5px $c-green-light;
@@ -39,8 +39,9 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:foc
 
 a{
   &:hover{
-    text-shadow: 0 0 10px $c-green-olive;
+    text-shadow:none;
     cursor: pointer;
+	
   }
 }
 .rollable {
@@ -283,6 +284,9 @@ a{
   .message-delete {
 	color: $c-lcars11;
   }
+  .message-delete:hover {
+	background:none;
+  }
   p.nue {
 	font-family: 'Antonio';
 	font-weight: 400;
@@ -305,6 +309,7 @@ a{
   }
   p.nue a:hover {
   text-shadow: none;
+  background:none;
   }
   .dice-result {
   font-family: 'Antonio';
@@ -318,12 +323,13 @@ a{
   #sidebar-tabs > .item.active {
   border:#000;
   box-shadow: none;
-  color: $c-lcars19;
+  color: $c-black;
+  //background:#999;
   }
   #sidebar-tabs > .item {
   border:#000;
   box-shadow: none;
-  color: $c-lcars01;
+  color: $c-black;
   }
   .tabs .item.active {
   text-shadow: none;
@@ -335,3 +341,187 @@ a{
   background: $c-lcars09;
   border: 1px solid $c-lcars09;
   }
+  .directory .action-buttons button {
+	position:relative;
+    display: block;
+    margin: 0 8px 16px 8px;
+    width: 100px;
+    height: 60px;
+    padding: 10px 14px 1px 1px;
+    background-color: $c-lcars01;
+    border-radius: 26px;
+    text-align: right;
+    line-height: normal;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $c-black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	border:0;
+	//margin:2px;
+
+  }
+  .scenes-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars02;
+  }
+  .scenes-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars03;
+  }
+  .actors-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars04;
+  }
+  .actors-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars05;
+  }
+  .items-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars06;
+  }
+  .items-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars07;
+  }
+  .journal-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars08;
+  }
+  .journal-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars09;
+  }
+  .tables-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars10;
+  }
+  .tables-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars11;
+  }
+  .cards-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars12;
+  }
+  .cards-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars13;
+  }
+  .playlists-sidebar .action-buttons button.create-document {
+	background-color:$c-lcars14;
+  }
+  .playlists-sidebar .action-buttons button.create-folder {
+	background-color:$c-lcars15;
+  }
+  .compendium-sidebar .action-buttons button.create-compendium {
+	background-color:$c-lcars17;
+  }
+#sidebar:not(.collapsed) {
+	background: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0) 170px,
+		#dd4444 170px),
+		linear-gradient(
+			to bottom,
+			$c-lcars11 0px,
+			$c-lcars11 115px,
+			$c-black 115px,
+			$c-black 120px,
+			$c-lcars08 120px,
+			$c-lcars08 355px,
+			$c-black 355px,
+			$c-black 360px,
+			$c-lcars12 360px,
+			$c-lcars12 645px,
+			$c-black 645px,
+			$c-black 650px,
+			transparent 650px
+		),
+		linear-gradient(
+			to bottom,
+			$c-lcars15 650px,
+			$c-lcars15 995px,
+			$c-black 995px,
+			$c-black 1000px,
+			$c-lcars11 1000px,
+			$c-lcars11 1155px,
+			$c-black 1155px,
+			$c-black 1160px,
+			transparent 1160px
+			),
+		linear-gradient(
+			to bottom,
+			$c-lcars09 1160px,
+			$c-lcars09 1375px,
+			$c-black 1375px,
+			$c-black 1380px,
+
+		)
+			
+			;
+	/*
+lcars side bar sizes
+margin:5px
+top: 115px
+size1: 80px
+size2: 160px
+size3: 275px
+size4: 345px
+size5: 155px
+size6: 215px
+
+	*/
+    border: none;
+    width: 570px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 0;
+}
+#sidebar:not(.collapsed) > #sidebar-tabs {
+    margin-left: 190px; 
+}
+#sidebar .sidebar-tab {
+	margin-left:170px;
+	border-top-left-radius:20px;
+	background:$c-black;
+	padding: 14px 0 0 14px;
+}
+nav#sidebar-tabs {
+	background:$c-lcars11;
+	margin-bottom:0;
+	font-size:10px;
+}
+nav#sidebar-tabs .item, nav#sidebar-tabs .item.active {
+	border-left: 5px solid #000;
+	border-radius: 0;
+	width:50px;
+}
+nav#sidebar-tabs .item:hover {
+	background:$c-lcars24;
+}
+.whisper {
+	margin-top:0px;
+}
+#sidebar-tabs > .item {
+	flex:auto;
+}
+@keyframes blinking {
+	0%,50% {
+		background: $c-lcars19;
+	  }
+	  51%,100% {
+		background: $c-black;
+	  }
+}
+#sidebar-tabs > .item.active {
+	animation:blinking 2s linear infinite;
+}
+.combat-sidebar .combat-tracker-header a.combat-button {
+	color:$c-white;
+}
+input[type=text]:focus, input[type=number]:focus, input[type=password]:focus, input[type=date]:focus, input[type=time]:focus {
+    box-shadow: none;
+}
+input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus {
+	box-shadow:none;
+}
+textarea:focus, select:focus {
+	box-shadow:none;
+}
+#chat-form textarea, #chat-controls .roll-type-select, .directory .directory-header .header-search input {
+	background:$c-lcars01;
+}

@@ -67,7 +67,7 @@ export class MomentumTracker extends Application {
         });
 
         html.find('.toggle-maxAp').click(ev => {
-            html.find('.ap-resource.maxMomentum-box').slideToggle("fast", function () { MomentumTracker.closed = !MomentumTracker.closed });
+            html.find('.ap-resource.maxMomentum-box').toggle(0,function () { MomentumTracker.closed = !MomentumTracker.closed });
         })
     }
 

@@ -1,12 +1,12 @@
 input[type="text"],
 input[type="number"] {
-	background-color: $c-light;
-	color: $c-dark;
+	background-color: $c-lcars01;
+	color: $c-black;
 	&.underline {
 		background-color: unset;
 		border: unset;
 		border-bottom: 1px solid $c-dark;
-		color: $c-dark;
+		color: $c-black;
 		&::placeholder {
 			color: #999;
 		}
