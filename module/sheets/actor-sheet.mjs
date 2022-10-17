@@ -97,30 +97,7 @@ export class ACActorSheet extends ActorSheet {
      * @return {undefined}
      */
     _prepareCharacterData(context) {
-        let isEncumbered = false;
-        let physicalItems = context.items.filter(i => i.system.hasOwnProperty('weight'));
-        let encumberingItems = physicalItems.filter((i) => {
-            if (i.type != 'armor') {
-                return true;
-            }
-            else {
-                if (!i.system.equipped || (i.system.equipped && i.system.qualities.heavy.value)) {
-                    return true
-                }
-            }
-        });
-        context.minorItemsTotal = encumberingItems.filter(i => parseInt(i.system.weight) === 1).length;
-        context.majorItemsTotal = encumberingItems.filter(i => parseInt(i.system.weight) === 3).length;
-        let totalEncumbrance = 0;
-        for (let i = 0; i < encumberingItems.length; i++) {
-            totalEncumbrance += parseInt(encumberingItems[i].system.quantity) * parseInt(encumberingItems[i].system.weight)
-        }
-
-        if (totalEncumbrance > this.actor.system.carryCapacity.value)
-            isEncumbered = true;
-
-        context.totalEncumbrance = totalEncumbrance;
-        context.isEncumbered = isEncumbered;
+        
     }
 
     /**
@@ -135,7 +112,6 @@ export class ACActorSheet extends ActorSheet {
 
         const skills = [];
         const talents = [];
-        const spells = [];
         const weapons = [];
         const armor = [];
         const skillkits = [];
@@ -151,9 +127,6 @@ export class ACActorSheet extends ActorSheet {
             }
             else if (i.type === 'talent') {
                 talents.push(i);
-            }
-            else if (i.type === 'spell') {
-                spells.push(i);
             }
             else if (i.type === 'armor') {
                 armor.push(i);
@@ -180,7 +153,6 @@ export class ACActorSheet extends ActorSheet {
         });
         context.skills = skills;
         context.talents = talents;
-        context.spells = spells;
         context.armor = armor;
         context.skillkits = skillkits;
         context.equipment = equipment;
@@ -287,55 +259,7 @@ export class ACActorSheet extends ActorSheet {
         // * SPELLS GRID
         html.find('.cell-expander').click((event) => { this._onItemSummary(event) });
 
-        html.find('.roll-spell.clickable').click((event) => {
-            event.preventDefault();
-            const li = $(event.currentTarget).parents(".item");
-            const item = this.actor.items.get(li.data("itemId"));
-            let complication = 20 - parseInt(item.system.difficulty - 1)
-            if (item.actor.type == 'character')
-                complication -= item.actor.getComplicationFromInjuries();
-
-            if (item.actor.type == 'npc')
-                complication -= item.actor.system.injuries.value;
-
-            const skillName = item.system.skill;
-            const focusName = item.system.focus;
-            if (!skillName)
-                return;
-
-            const skill = this.actor.items.getName(skillName);
-            let skillRank = 0;
-            try {
-                skillRank = skill.system.value;
-            } catch (err) { }
-            let isFocus = false;
-            try {
-                for (const [key, value] of Object.entries(skill.system.focuses)) {
-                    if (value.title === focusName && value.isfocus)
-                        isFocus = true;
-                }
-            } catch (err) { }
-            
-            const attrValue = -1;
-            let prefAttribute = "ins";
-            if(this.actor.system.spellcastingType=='researcher')
-                prefAttribute = "rea"
-            else if(this.actor.system.spellcastingType=='dabbler')
-                prefAttribute = "wil"
-
-            game.trekadventures.Dialog2d20.createDialog({ rollName: item.name, diceNum: 2, attribute: attrValue, skill: skillRank, focus: isFocus, complication: complication, actor: this.actor.system, prefAttribute: prefAttribute })
-
-        });
-
-        html.find('.roll-spell-cost.clickable').click((event) => {
-            event.preventDefault();
-            const li = $(event.currentTarget).parents(".item");
-            const itemId = li.data("itemId");
-            const item = this.actor.items.get(li.data("itemId"));
-            const cost = parseInt(item.system.cost);
-            game.trekadventures.DialogD6.createDialog({ rollName: `${item.name} - Cost`, diceNum: cost, trekadventuresRoll: null, itemId: itemId, actorId: this.actor._id })
-        })
-
+        
         html.find('.item-value-changer').change(async (event) => {
             event.preventDefault();
             const keyToChange = $(event.currentTarget).data('field');
@@ -397,12 +321,12 @@ export class ACActorSheet extends ActorSheet {
             const item = this.actor.items.get(li.data("itemId"));
             const itemId = li.data("itemId");
             let stressBonus = 0;
-            if (item.system.weaponType == 'agi')
-                stressBonus = item.actor.system.attributes['bra'].bonus;
-            else if (item.system.weaponType == 'coo')
-                stressBonus = item.actor.system.attributes['ins'].bonus;
-            else if (item.system.weaponType == 'wil')
-                stressBonus = item.actor.system.attributes['wil'].bonus;
+            if (item.system.weaponType == 'control')
+                stressBonus = item.actor.system.attributes['daring'].bonus;
+            else if (item.system.weaponType == 'fitness')
+                stressBonus = item.actor.system.attributes['insight'].bonus;
+            else if (item.system.weaponType == 'presence')
+                stressBonus = item.actor.system.attributes['presence'].bonus;
             let stress = parseInt(item.system.stress) + parseInt(stressBonus);
             game.trekadventures.DialogD6.createDialog({ rollName: item.name, diceNum: stress, trekadventuresRoll: null, itemId: itemId, actorId: this.actor._id })
         })

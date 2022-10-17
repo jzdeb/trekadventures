@@ -118,7 +118,7 @@ export class ACActor extends Actor {
     getRollShortcuts() {
         let out = {};
         // Attributes
-        for (const name of ["bra", "agi", "coo", "rea", "ins", "wil"]) {
+        for (const name of ["control", "daring", "fitness", "reason", "insight", "presence"]) {
             out[name.substring(0, 3)] = this.system.attributes[name].value;
         }
         // Power

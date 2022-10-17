@@ -29,6 +29,7 @@ export class Dialog2d20 extends Dialog {
         });
         html.on('click', '.roll', (event) => {
             let attr = html.find('[name="attribute"]').val();
+            let attrAbr = html.find('.select-attribute').val();
             if (!attr) {
                 let attrAbr = html.find('.select-attribute').val();
                 attr = this.actor.attributes[attrAbr].value;
@@ -36,7 +37,8 @@ export class Dialog2d20 extends Dialog {
             let skill = html.find('[name="skill"]').val();
             let complication = html.find('[name="complication"]').val();
             let isFocus = html.find('[name="focus"]').is(':checked');
-            game.trekadventures.Roller2D20.rollD20({ rollname: this.rollName, dicenum: this.diceNum, attribute: attr, skill: skill, focus: isFocus, complication: complication, actorId: this.actorId, itemId: this.itemId })
+
+            game.trekadventures.Roller2D20.rollD20({ rollname: this.rollName+' + '+String(attrAbr), dicenum: this.diceNum, attribute: attr, skill: skill, focus: isFocus, complication: complication, actorId: this.actorId, itemId: this.itemId })
         });
     }
 
@@ -53,7 +55,7 @@ export class Dialog2d20 extends Dialog {
         dialogData.skill = skill;
         dialogData.focus = focus;
         dialogData.complication = complication;
-        dialogData.attributes = ['agi', 'bra', 'coo', 'ins', 'rea', 'wil'];
+        dialogData.attributes = ['control', 'daring', 'fitness', 'insight', 'reason', 'presence'];
         dialogData.actor = actor;
         dialogData.prefAttribute = prefAttribute;
         dialogData.actorId = actorId;

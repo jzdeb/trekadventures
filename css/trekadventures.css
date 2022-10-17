@@ -204,9 +204,6 @@ a:hover {
   background-image: url(../assets/paper.webp);
 }
 
-.trekadventures-chat-message .content {
-  padding: 5px;
-}
 .trekadventures-chat-message .content h2 {
   border: none;
   font-family: "Antonio", sans-serif;
@@ -219,7 +216,7 @@ a:hover {
 .trekadventures-chat-message .content .success-plaq {
   margin: 0 0 5px 0;
   font-family: "Antonio", sans-serif;
-  color: #494e31;
+  color: #cc33ff;
   font-size: 16px;
 }
 .trekadventures-chat-message .content .success-plaq .TN {
@@ -230,7 +227,8 @@ a:hover {
 .trekadventures-chat-message .content .complication-plaq {
   margin: 0 0 5px 0;
   font-family: "Antonio", sans-serif;
-  color: #6b0b0b;
+  color: #dd4444;
+  font-size: 16px;
 }
 .trekadventures-chat-message .content .damage-plaq {
   margin: 0 0 5px 0;
@@ -324,13 +322,6 @@ a:hover {
   background-image: none;
 }
 
-p.nue, .chat-message .table-draw .table-description, .message-content {
-  font-family: "Antonio";
-  font-weight: 400;
-  color: #cc77ff;
-  border: none;
-}
-
 h4.message-sender, span.whisper-to {
   font-family: "Antonio";
   font-weight: 400;
@@ -369,14 +360,6 @@ p.nue {
 
 .chat-message.whisper, .chat-message {
   background: #000;
-}
-
-h3.nue, .flavor-text {
-  font-family: "Antonio";
-  font-weight: 700;
-  color: #ffaa00;
-  text-transform: uppercase;
-  border: 0;
 }
 
 p.nue a {
@@ -578,7 +561,7 @@ nav#sidebar-tabs .item:hover {
   }
 }
 #sidebar-tabs > .item.active {
-  animation: blinking 2s linear infinite;
+  background: #ffaa00;
 }
 
 .combat-sidebar .combat-tracker-header a.combat-button {
@@ -606,6 +589,26 @@ textarea:focus, select:focus {
   font-family: "Antonio";
   font-weight: 700;
   text-transform: uppercase;
+}
+
+p.nue, .chat-message .table-draw .table-description, .message-content, .success-plaq, .complication-plaq {
+  font-family: "Antonio";
+  font-weight: 400;
+  color: #cc77ff;
+  border: none;
+}
+
+h3.nue, .flavor-text, .content h2 {
+  font-family: "Antonio";
+  font-weight: 700;
+  color: #ffaa00;
+  text-transform: uppercase;
+  border: 0;
+  font-size: 17.5px;
+}
+
+.window-app .window-content {
+  background: #fff;
 }
 
 .grid,

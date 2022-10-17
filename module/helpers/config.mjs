@@ -1,28 +1,28 @@
 export const trekadventures = {};
 
 trekadventures.attributes = {
-  "agi": "trekadventures.AbilityAgi",
-  "bra": "trekadventures.AbilityBra",
-  "coo": "trekadventures.AbilityCoo",
-  "ins": "trekadventures.AbilityIns",
-  "rea": "trekadventures.AbilityRea",
-  "wil": "trekadventures.AbilityWil",
+  "control": "trekadventures.AbilityControl",
+  "daring": "trekadventures.AbilityDaring",
+  "fitness": "trekadventures.AbilityFitness",
+  "insight": "trekadventures.AbilityInsight",
+  "reason": "trekadventures.AbilityReason",
+  "presence": "trekadventures.AbilityPresence",
 };
 
 trekadventures.abilityAbbreviations = {
-  "agi": "trekadventures.AbilityAgiAbr",
-  "bra": "trekadventures.AbilityBraAbr",
-  "coo": "trekadventures.AbilityCooAbr",
-  "ins": "trekadventures.AbilityInsAbr",
-  "rea": "trekadventures.AbilityReaAbr",
-  "wil": "trekadventures.AbilityWilAbr",
+  "control": "trekadventures.AbilityControlAbr",
+  "daring": "trekadventures.AbilityDaringAbr",
+  "fitness": "trekadventures.AbilityFitnessAbr",
+  "insight": "trekadventures.AbilityInsightAbr",
+  "reason": "trekadventures.AbilityReasonAbr",
+  "presence": "trekadventures.AbilityPresenceAbr",
 };
 
 trekadventures.SKILLS = [
   {
     'label': 'ACADEMIA',
     'key': "Academia",
-    'focuses': ['Art', 'Cryptography', 'Finance', 'History', 'Linguistics', 'Occultism', 'Science']
+    'focuses': ['TestArt', 'Cryptography', 'Finance', 'History', 'Linguistics', 'Occultism', 'Science']
   },
   {
     'label': 'ATHLETICS',
@@ -95,15 +95,15 @@ trekadventures.WEAPONS = {
   "weaponTypes": [
     {
       'label': "Melee",
-      'bonusAttribute': 'agi'
+      'bonusAttribute': 'control'
     },
     {
       'label': "Ranged",
-      'bonusAttribute': 'coo'
+      'bonusAttribute': 'fitness'
     },
     {
       'label': "Mental",
-      'bonusAttribute': 'wil'
+      'bonusAttribute': 'presence'
     }
   ],
   "effects": {

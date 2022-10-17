@@ -9,7 +9,6 @@
       <a class="item" data-tab="abilities">{{localize "trekadventures.TEMPLATES.Abilities"}}</a>
       <a class="item" data-tab="talents">{{localize "trekadventures.TEMPLATES.Talents"}}</a>
       <a class="item" data-tab="inventory">{{localize "trekadventures.TEMPLATES.Gear"}}</a>
-      <a class="item" data-tab="spells">{{localize "trekadventures.TEMPLATES.Spells"}}</a>
       <a class="item" data-tab="data">{{localize "trekadventures.TEMPLATES.Data"}}</a>
       <a class="item" data-tab="effects">{{localize "trekadventures.TEMPLATES.Effects"}}</a>
     </div>
@@ -29,14 +28,8 @@
       {{> "systems/trekadventures/templates/actor/parts/actor-talents.html"}}
     </div>
 
-    {{!-- Spells Tab --}}
-    <div class="tab" data-group="primary" data-tab="spells">
-      {{> "systems/trekadventures/templates/actor/parts/actor-spells.html"}}
-    </div>
-
     {{!-- Inventory Tab --}}
     <div class="tab" data-group="primary" data-tab="inventory">
-      {{> "systems/trekadventures/templates/actor/parts/actor-encumbrance.html"}}
       {{> "systems/trekadventures/templates/actor/parts/actor-weapons.html"}}
       {{> "systems/trekadventures/templates/actor/parts/actor-armor.html"}}
       <div class="flexrow">

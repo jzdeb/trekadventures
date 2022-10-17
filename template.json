@@ -37,28 +37,28 @@
 			},
 			"stats": {
 				"attributes": {
-					"agi": {
-						"value": 6,
+					"control": {
+						"value": 7,
 						"bonus":0
 					},
-					"bra": {
-						"value": 6,
+					"daring": {
+						"value": 7,
 						"bonus":0
 					},
-					"coo": {
-						"value": 6,
+					"fitness": {
+						"value": 7,
 						"bonus":0
 					},
-					"ins": {
-						"value": 6,
+					"insight": {
+						"value": 7,
 						"bonus":0
 					},
-					"rea": {
-						"value": 6,
+					"reason": {
+						"value": 7,
 						"bonus":0
 					},
-					"wil": {
-						"value": 6,
+					"presence": {
+						"value": 7,
 						"bonus":0
 					}
 				}
@@ -89,11 +89,12 @@
 		},
 		"character": {
 			"templates": ["base", "stats", "derived"],
-			"nationality":"",
+			"species":"",
 			"rank":"",
-			"archetype":"",
-			"background":"",
-			"characteristic":"",
+			"environment":"",
+			"upbringing":"",
+			"traits":"",
+			"assignment":"",
 			"spellcastingType":"traditional"			
 		},		
 		"npc": {
@@ -153,9 +154,9 @@
 		},
 		"skill": {
 			"templates": ["base"],
-			"value": 0,
+			"value": 1,
 			"focuses": [],
-			"defaultAttribute": "agi",
+			"defaultAttribute": "control",
 			"summary": ""
 		},
 		"talent":{
@@ -195,7 +196,7 @@
 		"weapon": {
 			"templates": ["base", "physical", "equipable"],
 			"melee": false,
-			"weaponType": "agi",
+			"weaponType": "control",
 			"range":"close",
 			"focus":"",
 			"stress":0,

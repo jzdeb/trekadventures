@@ -140,12 +140,12 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('getAttributeBonus', function (actor, weaponType) {
-        if (weaponType == 'agi')
-            return actor.system.attributes['bra'].bonus;
-        else if (weaponType == 'coo')
-            return actor.system.attributes['ins'].bonus;
-        else if (weaponType == 'wil')
-            return actor.system.attributes['wil'].bonus;
+        if (weaponType == 'control')
+            return actor.system.attributes['daring'].bonus;
+        else if (weaponType == 'fitness')
+            return actor.system.attributes['insight'].bonus;
+        else if (weaponType == 'presence')
+            return actor.system.attributes['presence'].bonus;
     });
 
     Handlebars.registerHelper('getArmorQualities', function (qualities) {

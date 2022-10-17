@@ -117,7 +117,7 @@ a{
 
 .trekadventures-chat-message {
 	.content {
-		padding: 5px;
+		//padding: 5px;
 		h2 {
 			border: none;
 			font-family: $font-germania;
@@ -130,7 +130,7 @@ a{
 		.success-plaq {
 			margin: 0 0 5px 0;
 			font-family: $font-germania;
-      color: $c-green-olive;
+      		color: $c-lcars24;
 			//padding: 10px;
 			font-size: 16px;
 			//background-image: url(../assets/chat/green-placq.webp);
@@ -145,9 +145,9 @@ a{
 		.complication-plaq {
 			margin: 0 0 5px 0;
 			font-family: $font-germania;
-      color: $c-red-dark;
+      		color: $c-lcars11;
 			//padding: 14px 10px 10px 10px;
-			//font-size: 12px;
+			font-size: 16px;
 			//background-image: url(../assets/chat/red-placq.webp);
 			//background-size: 100% 100%;
 			//background-repeat: no-repeat;
@@ -256,12 +256,7 @@ a{
 	background-image: none;  
   }
   
-  p.nue, .chat-message .table-draw .table-description, .message-content {
-	font-family: 'Antonio';
-	font-weight: 400;
-	color: $c-lcars10;
-	border:none;
-  }
+
   
   h4.message-sender, span.whisper-to {
 	font-family: 'Antonio';
@@ -296,13 +291,7 @@ a{
   .chat-message.whisper, .chat-message {
 	background: #000;
   }
-  h3.nue, .flavor-text {
-	font-family: 'Antonio';
-	font-weight: 700;
-	color: $c-lcars19;
-	text-transform: uppercase;
-	border: 0;
-  }
+
   p.nue a {
   color: $c-lcars08;
   text-decoration: underline;
@@ -513,7 +502,8 @@ nav#sidebar-tabs .item:hover {
 	  }
 }
 #sidebar-tabs > .item.active {
-	animation:blinking 2s linear infinite;
+	//animation:blinking 2s linear infinite;
+	background: $c-lcars19;
 }
 .combat-sidebar .combat-tracker-header a.combat-button {
 	color:$c-white;
@@ -535,4 +525,28 @@ textarea:focus, select:focus {
 	font-family: 'Antonio';
 	font-weight: 700;
 	text-transform: uppercase;
+}
+//Chatbox text
+p.nue, .chat-message .table-draw .table-description, .message-content, .success-plaq, .complication-plaq {
+	font-family: 'Antonio';
+	font-weight: 400;
+	color: $c-lcars10;
+	border:none;
+  }
+
+
+
+//Chatbox Titles
+h3.nue, .flavor-text, .content h2 {
+	font-family: 'Antonio';
+	font-weight: 700;
+	color: $c-lcars19;
+	text-transform: uppercase;
+	border: 0;
+	font-size:17.5px;
+  }
+
+//popup
+.window-app .window-content {
+	background:$c-white;
 }
